@@ -47,10 +47,7 @@ function showNextImage() {
 
 async function fetchImagesFromDiscord() {
     images = [
-        'image1.jpg',
-        'image2.jpg',
-        'image1.png',
-        'image2.png',
+        imageUrls(channelID)
     ];
     showSlideshow();
 }
