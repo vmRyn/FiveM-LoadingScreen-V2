@@ -7,33 +7,39 @@ const botToken = 'MTE0MDQwMDY4MzQ0Nzc2NzE3MQ.Ghvq66.ks7kpLfZJFeCv01yFuq_-WAt9808
 const channelID = '1140402948501942402';
 
 client.once('ready', () => {
-    console.log('Bot Logged In');
+  console.log(`Logged in as ${client.user.tag}`);
+  client.user.setActivity('Fetching Images', { type: 'WATCHING' });
 });
 
 client.on('message', async (message) => {
-    if (MessageChannel === channelID) {
-        console.log('Image Receieved')
+    if (message.channel.id === '1140402948501942402') {
+      const imageUrls = extractImageUrls(message); // Function to extract image URLs
+      console.log('Received message with image URLs:', imageUrls);
     }
-});
-
-function extractImageUrls(message) {
+  });
+  
+  // Extract image URLs from a message
+  async function extractImageUrls(message) {
     const imageUrls = [];
-
+  
+    // Extract image URLs from attachments
     message.attachments.forEach((attachment) => {
-        if (attachment.url) {
-            imageUrls.push(attachment.url);
-    }
-});
-
-const urlsInContent = message.content.match(/\bhttps?:\/\/\S+\b/g);
-if (urlsInContent) {
-    urlsInContent.forEach((url) => {
+      if (attachment.url) {
+        imageUrls.push(attachment.url);
+      }
+    });
+  
+    // Extract image URLs from message content (assuming they are plain text URLs)
+    const urlsInContent = message.content.match(/\bhttps?:\/\/\S+\b/g);
+    if (urlsInContent) {
+      urlsInContent.forEach((url) => {
         if (url.match(/\.(jpeg|jpg|gif|png)$/i)) {
-            imageUrls.push(url);
+          imageUrls.push(url);
         }
-    })
-}
-return imageUrls;
-}
+      });
+    }
+  
+    return imageUrls;
+  }
 
-client.login(botToken)
+client.login(botToken);
