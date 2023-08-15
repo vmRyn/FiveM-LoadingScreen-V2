@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Image Upload</title>
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
 <form action="upload.php" method="POST" enctype="multipart/form-data">

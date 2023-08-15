@@ -3,13 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Discord Slideshow</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Icarus Loading</title>
 </head>
 <body>
+    <div class="overlay">
+        <div class="cornercontainer">
+            <div class="top">
+                <div class="left">
+                    <p class="title">Icarus FiveM</p>
+                    <p class="state" id="clients">0/0</p>
+                </div>
+                <div class="right">
+                    <img class="logo" src="assets/trans-logo.png">
+                </div>
+            </div>
+
+            <div class="sounds">
+                <div class="switch">
+                    <label class="form-switch">
+                        <input type="checkbox" id="sounds">
+                        <i></i>
+                    </label>
+                    <span class="left">Start</span>
+                    <span class="right">Stop</span>
+                </div>
+                <div class="icon"><i class="fas fa-volume"></i></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="information">
+                <p class="title">Icarus FiveM</p>
+                <div class="description"><p>
+                    ICARUS is dedicated to providing a fun and engaging experience for all of our players. Whether you are a seasoned veteran or a brand new player, we are committed to creating an inclusive and welcoming environment for everyone. 
+                    Our staff members are always on hand to help you out if you have any questions or concerns, so don't hesitate to reach out to them if you need anything.
+                    We offer a variety of different activities and features on our server, including custom cars, realistic driving physics, and a wide range of jobs and activities to participate in.</br></br>
+                    We are constantly updating and improving our server, so be sure to check back often for the latest updates.</br></br>
+                    
+                    Thank you for choosing to join our community. We hope you have an amazing time here and we look forward to seeing you in the city!</p></div>
+                <div class="buttons">
+                    <button id="read-more">Read More! <i class="fal fa-long-arrow-right" style="margin-left: 0.4vw;font-size: 0.9vw;"></i></button>
+                    <button id="collapse" style="display: none;">Thanks, Read Less!</button>
+                </div>
+            </div>
+
+            <div class="loader">
+                <div class="logo">
+                    <img class="transparent-logo" src="assets/trans-logo.png">
+                    <img class="filled-logo" src="assets/trans-logo.png">
+                </div>
+                <p class="progress">0%</p>
+                <p class="description">Loading server...</p>
+            </div>
+
+            <div class="categories">
+                <div class="buttons">
+
+                </div>
+                <div class="carousel">
+                    <div class="socialmedia">
+
+                    </div>
+                    <div class="staff">
+                        <div class="previous"></div>
+                        <div class="cards">
+                            <div class="innercards">
+    
+                            </div>
+                            <div class="pages">
+                                
+                            </div>
+                        </div>
+                        <div class="next"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hideoverlay">
+                <div class="bind"></div>
+                HIDE OVERLAY/SHOW VIDEO
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/config.js" type="text/javascript"></script>
+    <script src="scripts/main.js" type="text/javascript"></script>
+
     <div class="slideshow-container" id="slideshow-container"></div>
     <div id="img-folder" style="display: none;"></div>
-    <button id="fullscreen-button">Toggle Fullscreen</button>
     <script src="script.js"></script>
 </body>
 </html>
