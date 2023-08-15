@@ -86,7 +86,13 @@ async function fetchImagesFromFolder() {
         'img/image5.png',
         'img/image6.png',
         'img/image7.png',
-        'img/image8.png'
+        'img/image8.png',
+        'img/image9.png',
+        'img/image10.png',
+        'img/image11.png',
+        'img/image12.png',
+        'img/image13.png',
+        'img/image14.png',
     ];
     
     console.log('Fetched images:', images);
