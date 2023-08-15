@@ -351,12 +351,10 @@ body {
 
 .overlay .container > .information > * {
     position: relative;
-    margin: 0;
 }
 
 .overlay .container > .information > .title {
     margin-left: .4vw;
-
     color: rgb(255, 255, 255);
     font-size: 1.2vw;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -366,13 +364,10 @@ body {
     content: "";
     position: absolute;
     top: 0;
-    left: -.1vw;
-
+    left: -0.75vw;
     width: 8vw;
-    height: 1.9vw;
-
+    height: 2vw;
     transform: skew(-20deg, 0deg);
-
     background: #000000;
     box-shadow: 0 0 .5vw 0 #000000;
     z-index: -1;
