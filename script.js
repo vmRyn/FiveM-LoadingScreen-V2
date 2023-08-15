@@ -3,6 +3,7 @@ const fullscreenButton = document.getElementById('fullscreen-button');
 let images = []; // Array to hold image URLs
 let currentIndex = 0;
 let transitioning = false;
+const slideshowInterval = setInterval(showNextImage, 5000); // Change image every 5 seconds
 
 function populateSlideshow() {
     // Clear existing images
@@ -57,7 +58,6 @@ function showNextImage() {
         requestAnimationFrame(animate);
     }
 }
-
 
 async function fetchImagesFromDiscord() {
     // Use fetch or an API library to get image URLs from Discord
@@ -140,25 +140,3 @@ function setupImageFolderObserver() {
 
 // Call the setupImageFolderObserver function
 setupImageFolderObserver();
-
-const slideshowInterval = setInterval(showNextImage, 5000); // Change image every 5 seconds
-
-// Toggle fullscreen mode
-fullscreenButton.addEventListener('click', () => {
-    if (document.fullscreenElement) {
-        document.exitFullscreen();
-    } else {
-        document.documentElement.requestFullscreen().catch((err) => {
-            console.error('Error attempting to enable fullscreen:', err);
-        });
-    }
-});
-
-// Handle fullscreen change event
-document.addEventListener('fullscreenchange', () => {
-    if (document.fullscreenElement) {
-        fullscreenButton.textContent = 'Exit Fullscreen';
-    } else {
-        fullscreenButton.textContent = 'Toggle Fullscreen';
-    }
-});
