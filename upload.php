@@ -21,12 +21,6 @@
 <br>
 
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    echo "Sessions are not enabled on this server.";
-    exit;
-}
-session_start(); // Start or resume the session
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "BAZ2^kI7C782"; // Replace with your desired password
     $inputPassword = $_POST["uploadPassword"];
@@ -55,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($check !== false) {
             // You can add additional validation here if needed
             if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $targetFile)) {
-                $_SESSION["imageUploaded"] = true; // Store the flag in the session
                 echo "The image has been uploaded and saved as: $newFileName";
             } else {
                 echo "Sorry, there was an error uploading your file.";
@@ -64,11 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Invalid image file.";
         }
     }
-}
-
-// Clear the session flag if needed
-if (isset($_SESSION["imageUploaded"]) && $_SESSION["imageUploaded"] === true) {
-    unset($_SESSION["imageUploaded"]);
 }
 ?>
 

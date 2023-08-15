@@ -59,6 +59,36 @@ function showNextImage() {
     }
 }
 
+async function updateImagesAndSlideshow() {
+    const imgFolder = document.getElementById('img-folder');
+    const imgElements = imgFolder.getElementsByTagName('img');
+    
+    // Get the list of all images in the folder
+    const imagesInFolder = Array.from(document.getElementById('img-folder').querySelectorAll('img'));
+    
+    // Compare the images in the folder with the images in the array
+    const newImages = imagesInFolder.filter(image => !images.includes(image.src));
+    
+    // Add new images to the images array
+    if (newImages.length > 0) {
+        images = images.concat(newImages);
+        console.log('New images added:', newImages);
+        populateSlideshow();
+    } else {
+        const missingImages = [];
+        for (const image of images) {
+            if (!imagesInFolder.some(img => img.src === image)) {
+                missingImages.push(image);
+            }
+        }
+    
+        if (missingImages.length > 0) {
+            console.log('Missing images:', missingImages);
+            // Handle missing images here
+        }
+    }
+}
+
 async function fetchImagesFromDiscord() {
     // Use fetch or an API library to get image URLs from Discord
     // Example: const response = await fetch('YOUR_DISCORD_API_URL');
@@ -85,30 +115,6 @@ async function fetchImagesFromDiscord() {
 // Fetch images initially
 fetchImagesFromDiscord();
 
-function updateImagesAndSlideshow() {
-    // Use an array to hold the current and new image URLs
-    const newImages = [
-        'img/image.png',
-        'img/image2.png',
-        'img/image3.png',
-        'img/image4.png',
-        'img/image5.png',
-        'img/image6.png',
-        'img/image7.png',
-        'img/image8.png'
-    ];
-
-    // Compare the newImages array with the current images array
-    const addedImages = newImages.filter(newImage => !images.includes(newImage));
-
-    if (addedImages.length > 0) {
-        // Add new images to the images array
-        images = images.concat(addedImages);
-        console.log('New images added:', addedImages);
-        populateSlideshow();
-    }
-}
-
 function setupImageFolderObserver() {
     const observer = new MutationObserver(updateImagesAndSlideshow);
 
@@ -116,6 +122,7 @@ function setupImageFolderObserver() {
     const config = {
         childList: true, // Watch for changes in the list of child nodes
         subtree: true,   // Watch for changes in the entire subtree
+        src: true, //Watch for changes to the src attribute of images
     };
 
     // Start observing the 'img' folder
