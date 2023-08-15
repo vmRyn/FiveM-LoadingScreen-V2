@@ -103,14 +103,3 @@ async function fetchImagesFromFolder() {
 }
 
 fetchImagesFromFolder();
-
-function setupImageFolderObserver() {
-    const observer = new MutationObserver(updateImagesAndSlideshow);
-    const config = {
-        childList: true,
-        subtree: true,
-    };
-    observer.observe(imgFolder, config);
-}
-
-setupImageFolderObserver();
