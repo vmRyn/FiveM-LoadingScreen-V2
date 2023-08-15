@@ -4,7 +4,6 @@ let images = []; // Array to hold image URLs
 let currentIndex = 0;
 let transitioning = false;
 
-// Add images to the slideshow container
 function populateSlideshow() {
     // Clear existing images
     slideshowContainer.innerHTML = '';
@@ -13,10 +12,18 @@ function populateSlideshow() {
     images.forEach((imageUrl, index) => {
         const img = document.createElement('img');
         img.src = imageUrl;
+        img.style.position = 'absolute';
+        img.style.top = '0';
+        img.style.left = '0';
         img.style.opacity = index === currentIndex ? '1' : '0';
+        img.style.objectFit = 'cover'; // Ensure the image covers its container
+        img.style.width = '100%';      // Adjust the image width
+        img.style.height = '100%';     // Adjust the image height
+        img.style.zIndex = index === currentIndex ? '1' : '0'; // Set zIndex based on opacity
         slideshowContainer.appendChild(img);
     });
 }
+
 
 // Set up automatic slideshow
 function showNextImage() {
