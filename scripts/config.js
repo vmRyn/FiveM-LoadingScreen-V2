@@ -19,7 +19,6 @@ Config.Staff = [
 
 // Categories
 Config.Categories = [
-    {label: "Important Links", default: true}
 ];
 
 // Music
