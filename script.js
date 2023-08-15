@@ -60,11 +60,11 @@ function showNextImage() {
 }
 
 async function updateImagesAndSlideshow() {
-    const imgFolder = document.getElementById('img-folder');
+    const imgFolder = document.getElementById('slideshow-container');
     const imgElements = imgFolder.getElementsByTagName('img');
     
     // Get the list of all images in the folder
-    const imagesInFolder = Array.from(document.getElementById('img-folder').querySelectorAll('img'));
+    const imagesInFolder = Array.from(document.getElementById('slideshow-container').querySelectorAll('img'));
     
     // Compare the images in the folder with the images in the array
     const newImages = imagesInFolder.filter(image => !images.includes(image.src));
@@ -97,7 +97,7 @@ async function fetchImagesFromDiscord() {
 
     // Dummy data for demonstration purposes
     images = [
-        'img/image.png',
+        'img/image1.png',
         'img/image2.png',
         'img/image3.png',
         'img/image4.png',
@@ -107,9 +107,18 @@ async function fetchImagesFromDiscord() {
         'img/image8.png'
     ];
 
-    console.log('Fetched image URLs:', images); // Add this line
+    console.log('Fetched images', images); // Add this line
 
     populateSlideshow();
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      shuffleArray(images);
+      console.log('Shuffled Images:', images); // Output will be a shuffled version of the array
+      populateSlideshow();
 }
 
 // Fetch images initially
@@ -126,7 +135,7 @@ function setupImageFolderObserver() {
     };
 
     // Start observing the 'img' folder
-    observer.observe(document.getElementById('img-folder'), config);
+    observer.observe(document.getElementById('slideshow-container'), config);
 }
 
 // Call the setupImageFolderObserver function
@@ -142,7 +151,7 @@ function setupImageFolderObserver() {
     };
 
     // Start observing the 'img' folder
-    observer.observe(document.getElementById('img-folder'), config);
+    observer.observe(document.getElementById('slideshow-container'), config);
 }
 
 // Call the setupImageFolderObserver function
