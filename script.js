@@ -60,11 +60,11 @@ function showNextImage() {
 }
 
 async function updateImagesAndSlideshow() {
-    const imgFolder = document.getElementById('slideshow-container');
+    const imgFolder = document.getElementById('img-folder');
     const imgElements = imgFolder.getElementsByTagName('img');
     
     // Get the list of all images in the folder
-    const imagesInFolder = Array.from(document.getElementById('slideshow-container').querySelectorAll('img'));
+    const imagesInFolder = Array.from(document.getElementById('img-folder').querySelectorAll('img'));
     
     // Compare the images in the folder with the images in the array
     const newImages = imagesInFolder.filter(image => !images.includes(image.src));
@@ -89,7 +89,7 @@ async function updateImagesAndSlideshow() {
     }
 }
 
-async function fetchImagesFromDiscord() {
+async function fetchImagesFromFolder() {
     // Use fetch or an API library to get image URLs from Discord
     // Example: const response = await fetch('YOUR_DISCORD_API_URL');
     // const data = await response.json();
@@ -122,7 +122,7 @@ async function fetchImagesFromDiscord() {
 }
 
 // Fetch images initially
-fetchImagesFromDiscord();
+fetchImagesFromFolder();
 
 function setupImageFolderObserver() {
     const observer = new MutationObserver(updateImagesAndSlideshow);
@@ -135,7 +135,7 @@ function setupImageFolderObserver() {
     };
 
     // Start observing the 'img' folder
-    observer.observe(document.getElementById('slideshow-container'), config);
+    observer.observe(document.getElementById('img-folder'), config);
 }
 
 // Call the setupImageFolderObserver function
@@ -151,7 +151,7 @@ function setupImageFolderObserver() {
     };
 
     // Start observing the 'img' folder
-    observer.observe(document.getElementById('slideshow-container'), config);
+    observer.observe(document.getElementById('img-folder'), config);
 }
 
 // Call the setupImageFolderObserver function
