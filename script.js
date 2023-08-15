@@ -85,6 +85,62 @@ async function fetchImagesFromDiscord() {
 // Fetch images initially
 fetchImagesFromDiscord();
 
+function updateImagesAndSlideshow() {
+    // Use an array to hold the current and new image URLs
+    const newImages = [
+        'img/image.png',
+        'img/image2.png',
+        'img/image3.png',
+        'img/image4.png',
+        'img/image5.png',
+        'img/image6.png',
+        'img/image7.png',
+        'img/image8.png'
+    ];
+
+    // Compare the newImages array with the current images array
+    const addedImages = newImages.filter(newImage => !images.includes(newImage));
+
+    if (addedImages.length > 0) {
+        // Add new images to the images array
+        images = images.concat(addedImages);
+        console.log('New images added:', addedImages);
+        populateSlideshow();
+    }
+}
+
+function setupImageFolderObserver() {
+    const observer = new MutationObserver(updateImagesAndSlideshow);
+
+    // Define the configuration for the observer
+    const config = {
+        childList: true, // Watch for changes in the list of child nodes
+        subtree: true,   // Watch for changes in the entire subtree
+    };
+
+    // Start observing the 'img' folder
+    observer.observe(document.getElementById('img-folder'), config);
+}
+
+// Call the setupImageFolderObserver function
+setupImageFolderObserver();
+
+function setupImageFolderObserver() {
+    const observer = new MutationObserver(updateImagesAndSlideshow);
+
+    // Define the configuration for the observer
+    const config = {
+        childList: true, // Watch for changes in the list of child nodes
+        subtree: true,   // Watch for changes in the entire subtree
+    };
+
+    // Start observing the 'img' folder
+    observer.observe(document.getElementById('img-folder'), config);
+}
+
+// Call the setupImageFolderObserver function
+setupImageFolderObserver();
+
 const slideshowInterval = setInterval(showNextImage, 5000); // Change image every 5 seconds
 
 // Toggle fullscreen mode
