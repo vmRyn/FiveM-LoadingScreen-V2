@@ -56,28 +56,7 @@ function showNextImage() {
     }
 }
 
-function updateImagesAndSlideshow() {
-    const imagesInFolder = Array.from(imgFolder.querySelectorAll('img'));
-    const newImages = imagesInFolder.filter(image => !images.includes(image.src));
-
-    if (newImages.length > 0) {
-        images.push(...newImages.map(image => image.src));
-        console.log('New images added:', newImages);
-        populateSlideshow();
-    } else {
-        const missingImages = images.filter(image => !imagesInFolder.some(img => img.src === image));
-        if (missingImages.length > 0) {
-            console.log('Missing images:', missingImages);
-            // Handle missing images here
-        }
-    }
-}
-
 function fetchImagesFromFolder() {
-    // Use fetch or an API library to get image URLs
-    // images = await fetch('YOUR_DISCORD_API_URL').then(response => response.json());
-
-    // Dummy data for demonstration purposes
     images = [
         'img/image1.png',
         'img/image2.png',
