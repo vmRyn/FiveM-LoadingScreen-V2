@@ -77,11 +77,12 @@ function fetchImagesFromFolder() {
         'img/image18.png',
     ];
     
-    console.log('Fetched images:', images);
+    console.log('Fetched Images:', images);
     populateSlideshow();
     images.sort(() => Math.random() - 0.5); // Shuffle the images
+    console.log('Shuffling Images');
     console.log('Shuffled Images:', images);
     populateSlideshow();
 }
 
-fetchImagesFromFolder();
+fetchImagesFromFolder(console.log("Fetching Images from Directory"));
