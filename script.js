@@ -73,7 +73,7 @@ function updateImagesAndSlideshow() {
     }
 }
 
-async function fetchImagesFromFolder() {
+function fetchImagesFromFolder() {
     // Use fetch or an API library to get image URLs
     // images = await fetch('YOUR_DISCORD_API_URL').then(response => response.json());
 
