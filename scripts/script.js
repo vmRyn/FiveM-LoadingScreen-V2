@@ -57,25 +57,36 @@ function showNextImage() {
 }
 
 function fetchImagesFromFolder() {
-    images = [
-        'img/image1.png',
-        'img/image2.png',
-        'img/image3.png',
-        'img/image4.png',
-        'img/image5.png',
-        'img/image6.png',
-        'img/image7.png',
-        'img/image8.png',
-        'img/image9.png',
-        'img/image10.png',
-        'img/image11.png',
-        'img/image12.png',
-        'img/image13.png',
-        'img/image14.png',
-        'img/image15.png',
-        'img/image17.png',
-        'img/image18.png',
-    ];
+    images = [];
+
+    for (let i = 1; i <= 22; i++) {
+        const imagePath = `img/image${i}.png`;
+        images.push(imagePath);
+    }
+    
+    console.log(images); // This will output the array of image paths
+
+    const loadedImages = [];
+
+    function loadImage(imagePath) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => reject();
+            img.src = imagePath;
+        });
+    }
+
+    async function loadImages() {
+        for (const imagePath of images) {
+            try {
+                const loadedImage = await loadImage(imagePath);
+                loadedImages.push(loadedImage);
+            } catch {}
+        }
+    }
+
+    loadImages();
     
     console.log('Fetched Images:', images);
     populateSlideshow();
