@@ -63,8 +63,6 @@ function fetchImagesFromFolder() {
         const imagePath = `img/image${i}.png`;
         images.push(imagePath);
     }
-    
-    console.log(images); // This will output the array of image paths
 
     const loadedImages = [];
 
@@ -88,12 +86,9 @@ function fetchImagesFromFolder() {
 
     loadImages();
     
-    console.log('Fetched Images:', images);
-    populateSlideshow();
     images.sort(() => Math.random() - 0.5); // Shuffle the images
-    console.log('Shuffling Images');
     console.log('Shuffled Images:', images);
     populateSlideshow();
 }
 
-fetchImagesFromFolder(console.log("Fetching Images from Directory"));
+fetchImagesFromFolder();

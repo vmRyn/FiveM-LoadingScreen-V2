@@ -86,8 +86,8 @@ body {
     width: 100%;
     height: 100%;
 
-    backdrop-filter: blur(.0001vw);
-    background: radial-gradient(circle at center top, #5e5e5e59, rgba(43, 43, 43, 1));
+    backdrop-filter: blur(.1vw);
+    background: radial-gradient(circle at center top, #3b3b3b59, rgba(31, 31, 31, 0.5));
     transition: opacity .5s;
 }
 
