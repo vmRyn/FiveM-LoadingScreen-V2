@@ -22,7 +22,8 @@
     font-weight: bold;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -109,18 +110,18 @@ body {
     right: 3%;
 }
 
-.overlay .cornercontainer > .top {
+.overlay .cornercontainer>.top {
     display: flex;
     gap: 0.6vw;
 }
 
-.overlay .cornercontainer > .top > .left,
-.overlay .cornercontainer > .top > .right {
+.overlay .cornercontainer>.top>.left,
+.overlay .cornercontainer>.top>.right {
     flex-basis: 50%;
     justify-content: right;
 }
 
-.overlay .cornercontainer > .top > .left > * {
+.overlay .cornercontainer>.top>.left>* {
     width: max-content;
     margin: 0;
     margin-left: auto;
@@ -129,18 +130,18 @@ body {
     font-family: "PoppinsSemiBold";
 }
 
-.overlay .cornercontainer > .top .title {
+.overlay .cornercontainer>.top .title {
     font-size: 0.8vw;
     text-transform: uppercase;
 }
 
-.overlay .cornercontainer > .top .date {
+.overlay .cornercontainer>.top .date {
     color: rgba(255, 255, 255, 0.6);
     font-family: "Poppins";
     font-size: 0.6vw;
 }
 
-.overlay .cornercontainer > .top .state {
+.overlay .cornercontainer>.top .state {
     position: relative;
     display: flex;
     align-items: center;
@@ -148,7 +149,7 @@ body {
     font-size: 0.65vw;
 }
 
-.overlay .cornercontainer > .top .state::before {
+.overlay .cornercontainer>.top .state::before {
     content: "";
     position: absolute;
     left: -0.8vw;
@@ -162,12 +163,12 @@ body {
     border-radius: 2vw;
 }
 
-.overlay .cornercontainer > .top > .right > .logo {
+.overlay .cornercontainer>.top>.right>.logo {
     width: 2.2vw;
     image-rendering: -webkit-optimize-contrast;
 }
 
-.overlay .cornercontainer > .sounds {
+.overlay .cornercontainer>.sounds {
     display: flex;
     position: relative;
     top: 3%;
@@ -183,31 +184,28 @@ body {
     width: 4.8vw;
 }
 
-.overlay .cornercontainer > .sounds > .icon {
+.overlay .cornercontainer>.sounds>.icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 1.3vw;
     height: 1.3vw;
-
     background-color: #ffffff;
     border-radius: .5vw;
-
     font-size: .6vw;
     color: rgb(255, 195, 0);
 }
 
-.overlay .cornercontainer > .sounds > .icon > * {
+.overlay .cornercontainer>.sounds>.icon>* {
     transform: skew(20deg, 0deg);
 }
 
-.overlay .cornercontainer > .sounds > .switch {
+.overlay .cornercontainer>.sounds>.switch {
     position: relative;
     width: 3.5vw;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch {
+.overlay .cornercontainer>.sounds>.switch>.form-switch {
     display: block;
 
     user-select: none;
@@ -218,17 +216,17 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .label {
+.overlay .cornercontainer>.sounds>.switch>.label {
     margin: 0;
     margin-bottom: .2vw;
 
     text-align: center;
     color: rgba(255, 0, 0, 0.7);
     font-size: .6vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > i {
+.overlay .cornercontainer>.sounds>.switch>.form-switch>i {
     display: block;
     margin: auto;
     width: 100%;
@@ -237,15 +235,15 @@ body {
     transition: all .3s linear;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .left,
-.overlay .cornercontainer > .sounds > .switch > .right {
+.overlay .cornercontainer>.sounds>.switch>.left,
+.overlay .cornercontainer>.sounds>.switch>.right {
     position: absolute;
     bottom: 0;
 
     line-height: 1.3vw;
     color: white;
     font-size: .5vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     pointer-events: none;
 
     transform: skew(20deg, 0);
@@ -253,15 +251,15 @@ body {
     z-index: 99;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .left {
+.overlay .cornercontainer>.sounds>.switch>.left {
     left: 12%;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .right {
+.overlay .cornercontainer>.sounds>.switch>.right {
     right: 12%;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > i::after {
+.overlay .cornercontainer>.sounds>.switch>.form-switch>i::after {
     content: "";
     position: absolute;
     left: 0;
@@ -276,32 +274,41 @@ body {
     transform-origin: left;
 }
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > input { display: none; }
+.overlay .cornercontainer>.sounds>.switch>.form-switch>input {
+    display: none;
+}
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > input:active + i::after { transform: scale(1.2, 1.0); }  
+.overlay .cornercontainer>.sounds>.switch>.form-switch>input:active+i::after {
+    transform: scale(1.2, 1.0);
+}
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > input:checked + i::after { transform: translateX(100%) }  
+.overlay .cornercontainer>.sounds>.switch>.form-switch>input:checked+i::after {
+    transform: translateX(100%)
+}
 
-.overlay .cornercontainer > .sounds > .switch > .form-switch > input:checked:active + i::after { transform: translateX(100%) scale(1.2, 1.0); transform-origin: right; }  
+.overlay .cornercontainer>.sounds>.switch>.form-switch>input:checked:active+i::after {
+    transform: translateX(100%) scale(1.2, 1.0);
+    transform-origin: right;
+}
 
 /* Socials */
 
-.overlay .container > .socials {
+.overlay .container>.socials {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.overlay .container > .socials > .title {
+.overlay .container>.socials>.title {
     writing-mode: vertical-rl;
     margin: 0;
 
     color: rgb(255, 195, 0);
     font-size: .8vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .socials > .line {
+.overlay .container>.socials>.line {
     flex-shrink: 0;
 
     margin: .7vw 0vw;
@@ -312,7 +319,7 @@ body {
     background: rgb(255, 195, 0);
 }
 
-.overlay .container > .socials > .buttons > a {
+.overlay .container>.socials>.buttons>a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,7 +327,7 @@ body {
     position: relative;
 
     margin-bottom: .7vw;
-   
+
     width: 2vw;
     height: 2vw;
 
@@ -330,11 +337,11 @@ body {
     transition: color .15s;
 }
 
-.overlay .container > .socials > .buttons > a:hover {
+.overlay .container>.socials>.buttons>a:hover {
     background: rgb(255, 195, 0)
 }
 
-.overlay .container > .socials > .buttons > a::after {
+.overlay .container>.socials>.buttons>a::after {
     content: "Copied to clipboard!";
     position: absolute;
     left: 120%;
@@ -348,7 +355,7 @@ body {
 
     color: rgb(255, 195, 0);
     font-size: .6vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     opacity: .0;
     backdrop-filter: blur(.5vw);
 
@@ -358,32 +365,32 @@ body {
     transition: all .15s;
 }
 
-.overlay .container > .socials > .buttons > a.copied::after {
+.overlay .container>.socials>.buttons>a.copied::after {
     transform: scale(1.0);
     opacity: 1.0;
 }
 
 /* Information */
 
-.overlay .container > .information {
+.overlay .container>.information {
     flex-basis: 33%;
     margin-right: -1vw;
     padding-left: 3vw;
     box-sizing: border-box;
 }
 
-.overlay .container > .information > * {
+.overlay .container>.information>* {
     position: relative;
 }
 
-.overlay .container > .information > .title {
+.overlay .container>.information>.title {
     margin-left: .4vw;
     color: rgb(255, 255, 255);
     font-size: 1.2vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .information > .title::before {
+.overlay .container>.information>.title::before {
     content: "";
     position: absolute;
     top: 0;
@@ -394,7 +401,7 @@ body {
     z-index: -1;
 }
 
-.overlay .container > .information > .title::after {
+.overlay .container>.information>.title::after {
     content: "Icarus";
     position: absolute;
     bottom: -1.5vw;
@@ -403,13 +410,13 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 5vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     margin: 0;
     user-select: none;
     z-index: -1;
 }
 
-.overlay .container > .information > .description {
+.overlay .container>.information>.description {
     height: 6vw;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -422,21 +429,21 @@ body {
     transition: height .5s;
 }
 
-.overlay .container > .information > .description > p {
+.overlay .container>.information>.description>p {
     margin: 0;
 
     color: rgb(255, 255, 255);
     font-size: .8vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     font-weight: normal;
 }
 
-.overlay .container > .information > .buttons {
+.overlay .container>.information>.buttons {
     margin-top: .9vw;
     height: 1.8vw;
 }
 
-.overlay .container > .information > .buttons > * {
+.overlay .container>.information>.buttons>* {
     position: absolute;
     top: 0;
     left: 0;
@@ -451,29 +458,29 @@ body {
 
     background: linear-gradient(to top right, rgba(255, 195, 0, 0.7), rgba(255, 150, 0, 0.7));
     color: white;
-    
+
     outline: 0;
     box-shadow: 0 0 0.5vw 0 #000000;
     border: solid 0.1vw #000000;
 
     line-height: 1.7vw;
     font-size: .6vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 
     transition: background .15s;
 }
 
-.overlay .container > .information > .buttons > *:hover {
+.overlay .container>.information>.buttons>*:hover {
     background-color: #ffc300;
     color: #000000;
 }
 
 /* Loader */
 
-.overlay .container > .loader {
+.overlay .container>.loader {
     display: flex;
     flex-direction: column;
-    
+
     justify-content: center;
     align-items: center;
 
@@ -482,31 +489,31 @@ body {
     margin: 0 6vw;
 }
 
-.overlay .container > .loader > .progress {
+.overlay .container>.loader>.progress {
     margin: 0;
     margin-top: .8vw;
 
     color: white;
     font-size: .9vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .loader > .description {
+.overlay .container>.loader>.description {
     margin: 0;
     margin-top: .0vw;
 
     color: rgba(255, 255, 255, 0.5);
     font-size: .65vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .loader > .logo {
+.overlay .container>.loader>.logo {
     position: relative;
 }
 
-.overlay .container > .loader > .logo > * {
+.overlay .container>.loader>.logo>* {
     display: block;
-    
+
     width: 11vw;
 
     -webkit-user-drag: none;
@@ -517,11 +524,11 @@ body {
     image-rendering: -webkit-optimize-contrast;
 }
 
-.overlay .container > .loader .transparent-logo {
+.overlay .container>.loader .transparent-logo {
     position: relative;
 }
 
-.overlay .container > .loader .filled-logo {
+.overlay .container>.loader .filled-logo {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -534,7 +541,7 @@ body {
 
 /* Team */
 
-.overlay .container > .categories {
+.overlay .container>.categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -545,7 +552,7 @@ body {
     margin-left: -1vw;
 }
 
-.overlay .container > .categories > .buttons {
+.overlay .container>.categories>.buttons {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
@@ -553,7 +560,7 @@ body {
     margin-bottom: 0.5vw;
 }
 
-.overlay .container > .categories > .buttons > p {
+.overlay .container>.categories>.buttons>p {
     display: flex;
     justify-content: center;
     position: relative;
@@ -561,7 +568,7 @@ body {
     margin: 0;
 
     font-size: 0.7vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     color: rgba(255, 255, 255, 0.7);
 
     text-align: center;
@@ -570,12 +577,12 @@ body {
     transition: 0.3s color;
 }
 
-.overlay .container > .categories > .buttons > p.active {
-    font-family:"Poppins";
+.overlay .container>.categories>.buttons>p.active {
+    font-family: "Poppins";
     color: white;
 }
 
-.overlay .container > .categories > .buttons > p::before {
+.overlay .container>.categories>.buttons>p::before {
     content: "";
     position: absolute;
     bottom: -0.3vw;
@@ -587,27 +594,27 @@ body {
     transition: 0.3s width;
 }
 
-.overlay .container > .categories > .buttons > p.active::before {
+.overlay .container>.categories>.buttons>p.active::before {
     width: 1.5vw;
 }
 
-.overlay .container > .categories .carousel {
+.overlay .container>.categories .carousel {
     display: flex;
     width: 100%;
     overflow: hidden;
     padding: 0.5vw 0;
 }
 
-.overlay .container > .categories > .carousel > * {
+.overlay .container>.categories>.carousel>* {
     transition: 0.5s transform;
 }
 
-.overlay .container > .categories .socialmedia {
+.overlay .container>.categories .socialmedia {
     display: flex;
     gap: 1vw;
 
     flex-shrink: 0;
-    
+
     align-content: flex-start;
     flex-wrap: wrap;
 
@@ -616,7 +623,7 @@ body {
     padding: 0 4vw;
 }
 
-.overlay .container > .categories .socialmedia > .box {
+.overlay .container>.categories .socialmedia>.box {
     position: relative;
     display: flex;
     align-items: center;
@@ -635,37 +642,37 @@ body {
     transition: 0.2s background-color;
 }
 
-.overlay .container > .categories .socialmedia > .box .icon {
+.overlay .container>.categories .socialmedia>.box .icon {
     width: 1.5vw;
     height: 1.5vw;
 
     margin-right: 1vw;
 }
 
-.overlay .container > .categories .socialmedia > .box * {
+.overlay .container>.categories .socialmedia>.box * {
     user-select: none;
 }
 
-.overlay .container > .categories .socialmedia > .box .title {
+.overlay .container>.categories .socialmedia>.box .title {
     margin: 0;
 
     font-size: 0.7vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     color: white;
 }
 
-.overlay .container > .categories .socialmedia > .box .description {
+.overlay .container>.categories .socialmedia>.box .description {
     margin: 0;
     font-size: 0.65vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     color: rgba(255, 255, 255, 0.7);
 }
 
-.overlay .container > .categories .socialmedia > .box:hover {
+.overlay .container>.categories .socialmedia>.box:hover {
     background-color: rgb(255, 195, 50);
 }
 
-.overlay .container > .categories .socialmedia > .box::after {
+.overlay .container>.categories .socialmedia>.box::after {
     content: "Copied to clipboard!";
     position: absolute;
     transform: scale(.7) translateX(-50%);
@@ -678,7 +685,7 @@ body {
     background: rgba(0, 0, 0, .3);
     color: white;
     font-size: .6vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
     opacity: .0;
     backdrop-filter: blur(.5vw);
     pointer-events: none;
@@ -687,15 +694,15 @@ body {
     transition: all .15s;
 }
 
-.overlay .container > .categories .socialmedia > .box.copied::after {
+.overlay .container>.categories .socialmedia>.box.copied::after {
     transform: scale(1.0) translateX(-50%);
     opacity: 1.0;
 }
 
-.overlay .container > .categories .staff {
+.overlay .container>.categories .staff {
     display: flex;
     flex-shrink: 0;
-    
+
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -703,7 +710,7 @@ body {
     width: 100%;
 }
 
-.overlay .container > .categories .staff .cards {
+.overlay .container>.categories .staff .cards {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -714,7 +721,7 @@ body {
     overflow-x: hidden;
 }
 
-.overlay .container > .categories .staff .innercards {
+.overlay .container>.categories .staff .innercards {
     display: flex;
     width: 100%;
     height: 14.5vw;
@@ -723,12 +730,12 @@ body {
     transition: transform .5s;
 }
 
-.overlay .container > .categories .staff .pages {
+.overlay .container>.categories .staff .pages {
     display: flex;
     margin-top: .5vw;
 }
 
-.overlay .container > .categories .staff .pages > div {
+.overlay .container>.categories .staff .pages>div {
     width: .4vw;
     height: .4vw;
 
@@ -739,12 +746,12 @@ body {
     transition: all .15s;
 }
 
-.overlay .container > .categories .staff .pages > div.active {
+.overlay .container>.categories .staff .pages>div.active {
     background: white;
     transform: scale(1.2);
 }
 
-.overlay .container > .categories .staff .card {
+.overlay .container>.categories .staff .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -764,25 +771,25 @@ body {
     background-position: center, center;
 }
 
-.overlay .container > .categories .staff .card > .name {
+.overlay .container>.categories .staff .card>.name {
     margin: 0;
     margin-top: 1.7vw;
 
     color: white;
     font-size: 1vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .categories .staff .card > .description {
+.overlay .container>.categories .staff .card>.description {
     margin: 0;
     margin-top: .5vw;
 
     color: rgba(255, 255, 255, .7);
     font-size: .7vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .categories .staff .card > .avatar {
+.overlay .container>.categories .staff .card>.avatar {
     display: block;
     margin: 0 auto;
     margin-top: 1.5vw;
@@ -793,7 +800,7 @@ body {
     object-fit: cover;
 }
 
-.overlay .container > .categories .staff .card::after {
+.overlay .container>.categories .staff .card::after {
     content: "";
     position: absolute;
     bottom: -.15vw;
@@ -805,8 +812,8 @@ body {
     box-shadow: 0 0 .5vw 0 var(--color);
 }
 
-.overlay .container > .categories .staff .previous,
-.overlay .container > .categories .staff .next {
+.overlay .container>.categories .staff .previous,
+.overlay .container>.categories .staff .next {
     margin: .8vw;
     width: 1.5vw;
     height: 1.5vw;
@@ -820,26 +827,26 @@ body {
     transition: opacity .15s;
 }
 
-.overlay .container > .categories .staff .previous:hover,
-.overlay .container > .categories .staff .next:hover {
+.overlay .container>.categories .staff .previous:hover,
+.overlay .container>.categories .staff .next:hover {
     opacity: 1.0;
 }
 
-.overlay .container > .categories .staff .next {
+.overlay .container>.categories .staff .next {
     transform: rotate(180deg);
 }
 
 /* Hide overlay */
 
-.overlay .container > .hideoverlay {
+.overlay .container>.hideoverlay {
     display: flex;
     position: absolute;
     bottom: 3%;
-    left: calc(11.5% - 6.5vw);
+    left: calc(10.5% - 6.5vw);
     user-select: none;
 }
 
-.overlay .container > .hideoverlay .bind {
+.overlay .container>.hideoverlay .bind {
     width: 1vw;
     height: 1vw;
     border-radius: .2vw;
@@ -851,13 +858,12 @@ body {
     text-align: center;
     color: black;
     font-size: .7vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
 
-.overlay .container > .hideoverlay {
+.overlay .container>.hideoverlay {
     line-height: 1vw;
     color: rgba(255, 255, 255, .7);
     font-size: .6vw;
-    font-family:"Poppins";
+    font-family: "Poppins";
 }
-
