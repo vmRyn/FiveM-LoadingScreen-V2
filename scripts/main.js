@@ -41,10 +41,6 @@ function setup() {
     let day = currentDate.getDate() < 10 ? "0" + currentDate.getDate() : currentDate.getDate();
     $("#date").html(year + "-" + month + "-" + day)
 
-    // Music
-    song = new Audio("assets/audio/" + Config.Song);
-    song.play()
-
     // Categories
     var currentCat = "";
     Config.Categories.forEach((cat, index) => {

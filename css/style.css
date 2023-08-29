@@ -839,7 +839,6 @@ body {
 /* Hide overlay */
 
 .overlay .container>.hideoverlay {
-    display: flex;
     position: absolute;
     bottom: 3%;
     left: calc(10.5% - 6.5vw);
