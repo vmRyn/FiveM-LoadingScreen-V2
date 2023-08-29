@@ -9,7 +9,7 @@ files {
     '*.html',
     '*.php',
     'assets/audio/*.mp3',
-    'assets/fonts/',
+    'assets/fonts/*.ttf',
     'assets/*.png',
     'img/*.png',
     'img/*.jpg',
