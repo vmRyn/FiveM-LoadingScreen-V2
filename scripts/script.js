@@ -59,7 +59,7 @@ function showNextImage() {
 function fetchImagesFromFolder() {
     images = [];
 
-    for (let i = 1; i <= 35; i++) {
+    for (let i = 1; i <= 37; i++) {
         const imagePath = `img/image${i}.png`;
         images.push(imagePath);
     }
