@@ -866,3 +866,15 @@ body {
     font-size: .6vw;
     font-family: "Poppins";
 }
+
+.mybind1 {
+    background-color: #ffc300;
+    border-radius: 5px;
+    padding: 4px;
+    color: #000000;
+}
+
+h4 {
+    color: white;
+    font-weight: lighter;
+}
